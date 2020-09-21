@@ -1,0 +1,15 @@
+version: "3.2"
+services:
+  web:
+    image: palopalepalo/web:1.0
+    build: web
+    ports:
+      - 80:3000
+  db:
+    image: palopalepalo/db:1.0
+    build: db
+    volumes:
+      - pets-data:/var/lib/postgresql/data
+
+volumes:
+  pets-data:
